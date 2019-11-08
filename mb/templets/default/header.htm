@@ -1,0 +1,29 @@
+<a name="gettop" id="gettop"></a>
+<div id="header">
+	<div id="header-n">
+		<div id="zdacglogo"><a href="/"><img src="/templets/default/images/logo.png" width="175" height="39"></a></div>
+	</div>
+</div>
+
+<div class="wrapperhovertree">
+	<div class="container">
+		<header>
+			<h1><a href="javascript:;" class="slide-menu" target="_self"><img
+						src="/images/menu.png" alt=""></a></h1>
+		</header>
+	</div>
+</div>
+<div id="navMenu">
+	<div class="slide-mask"></div>
+	<aside class="slide-wrapper">
+		<div>
+			<ul>
+				<li><a href='{dede:global.cfg_cmsurl/}/' class="active"><span>首页</span></a></li>
+				{dede:channel type='top' row='8'}
+				<li><a href='[field:typeurl/]' [field:rel/]> <span>[field:typename/]</span></a></li>
+				{/dede:channel}
+			</ul>
+		</div>
+	</aside>
+</div>
+<!-- //End header -->

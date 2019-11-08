@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{dede:field.typename/}_{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/css.css" rel="stylesheet" media="screen" type="text/css" />
+</head>
+<body class="pbody">
+{dede:include filename="header.htm"/}
+<div class="page_box w1180 center">
+  
+  <!--连载列表-->
+  <div class="abox w1120 box_shadow t15">
+    <div class="abox_dt"><strong class="ico_01">邪恶漫画连载</strong></div>
+    <dd class="comic_list">
+    {dede:channelartlist  row='24'}
+
+     <a href="{dede:field.typeurl/}" title="{dede:field.typename/}" target="_blank">
+     <img src="{dede:arclist orderby='id' orderway='desc' flag='' limit='0,1'}[field:litpic/]{/dede:arclist}" alt="{dede:arclist orderby='id' orderway='desc' flag='' limit='0,1'}[field:fulltitle/]{/dede:arclist}"/>
+     <strong>{dede:field.typename/}</strong>
+     <span>更新至：{dede:arclist  orderby='id' orderway='desc' flag='' limit='0,1'}[field:fulltitle/]{/dede:arclist}</span>
+     <span>{dede:sql sql="select sum(click) as clicksum from #@__archives where typeid=~typeid~" }
+                  撸过<font style="color:#C00;">[field:clicksum/]</font> 次
+                {/dede:sql}</span>
+      <small>{dede:field.content/}</small>
+     </a>
+
+    {/dede:channelartlist}
+    </dd>
+  </div>
+  <!--连载列表-->
+</div>
+{dede:include filename="footer.htm"/}
+</body>
+</html>

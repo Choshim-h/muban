@@ -1,0 +1,249 @@
+/*
+
+[Ŀ¼��] 
+
+	1- sidebar               �ұ߲���
+	2- searchBox             ������
+	3- ad                    ��������
+	4- sidebarBox            ��������ģ��
+	5- comments              ���������
+	6- tag                   ��ǩ��
+	7- links                 ��������
+	8- guestbookSiderba      ���԰��Ҳ�ר�ÿ��
+
+*/
+
+
+/* =1 sidebar�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C-�C�C�C�C�C�C*/
+#sidebar{/* �ұ߲��������� */
+	float:left;
+	margin-top:20px;
+	_margin-left:15px;
+	width:360px;
+}
+
+/* =2 searchBox�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C*/
+#searchBox{/* ������� */
+	width:358px;
+	height:50px;
+	background:#fff;
+	border:1px solid #CCC;
+	float:left;
+	overflow:hidden;
+	clear:both;
+}
+#searchBox h4 {
+	display:none;
+	font-size:0px;
+}
+input.searchInput{/* ��������� */
+	float:left;
+	width:300px;
+	font-size:10px;
+	font-family:Arial;
+	color:#868686;
+	margin-left:10px;
+	margin-top:13px;
+	padding:5px 5px;
+	border:1px solid #e7e7e7;
+}
+input.searchSubmit{/* �ύ������ť */
+	cursor:pointer;
+	float:left;
+	height:25px;
+	width:27px;
+	margin-top:13px;
+	margin-left:5px;
+}
+
+/* =3 ad�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C*/
+#ad_1{/* �ұ������ */
+	float:left;
+	width:360px;
+	margin:20px 0px 0px 0px;
+}
+
+
+/* =4 sidebarBox�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C-�C�C�C�C�C�C*/
+#sidebarBox{/* ��������ģ�� */
+	float:left;
+	background:#fff;
+	width:360px;
+	margin:20px 0px 0px 0px;
+}
+.boxTop{/* ���ͷ�� */
+	background:#777;
+  height:35px;
+  width:360px;
+}
+.boxTop h2{/* ���ͷ������ */
+	color:#fff;
+	font-size:14px;
+	font-weight:bold;
+	line-height:35px;
+	padding-left:10px;
+}
+.boxContent , .boxClassify{/* ������ݲ���(.boxClassifyΪ��������-��־����) */
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+  padding:15px 0px;
+  width:358px;
+  font-size:12px;
+  color:#222;
+  line-height:26px;
+}
+.boxContent a{
+	color:#222;
+	text-decoration:none;
+	padding:0px 15px;
+}
+.boxContent a:hover{
+	text-decoration:none;
+	color:#D02F53;
+}
+.boxClassify a{
+	color:#222;
+	text-decoration:none;
+	padding-left:15px;;
+	font-weight:bold;
+}
+.boxClassify a:hover{
+	text-decoration:none;
+	color:#D02F53;
+	font-weight:bold;
+}
+
+/* =5 comments�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C-�C�C�C�C�C*/
+.comments{/* ���������ר���б� */
+	margin-left:15px;
+	margin-right:15px;
+	padding-bottom:10px;
+	overflow:hidden;
+}
+.comments li{
+	border-bottom:1px dashed #ccc;
+	list-style:none;
+	padding:10px 0px;
+	overflow:hidden;
+	clear:both;
+}
+.comments small{
+	display:block;
+	height:21px;
+	line-height:21px;
+	padding-top:5px;
+	overflow:hidden;
+}
+.comments small a{
+	padding:0px;
+	color:#669900;
+	text-decoration:none;
+}
+.comments small a:hover{
+	color:#669900;
+	text-decoration:underline;
+}
+
+.comments small a.username{
+	color:#D02F53;
+	text-decoration:none;
+}
+.comments p{
+	color:#222;
+	padding:5px 0px;
+	line-height:21px;
+	overflow:hidden;
+}
+
+/* =6 tag�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C*/
+#tags{/* �����-���Ʊ�ǩ */
+  width:200px;
+  height:150px;
+	position:relative; 
+	font-size:12px;
+	color:#333;
+	text-align:center;
+}
+#tags a{
+	position:absolute; 
+	top:0px; 
+	left:0px; 
+	color:#333; 
+	font-family:Arial;
+	text-decoration:none; 
+}
+#tags a:hover{
+	color:#fff;
+	background:#D02F53; 
+}
+
+/* =7 links�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C-�C�C�C�C�C*/
+.linksImg{/*��������(ͼƬ)ר��*/
+	clear:both;
+	width:360px;
+	_width:358px;
+	padding-bottom:5px;
+}
+.linksImg li{
+	float:left;
+	width:88px;
+	height:31px;
+	line-height:14px;
+	list-style:none;
+	margin-right:12px;
+	_margin-right:0px;
+	margin-bottom:12px;
+}
+.linksTxt{/*��������(����)ר��*/
+	width:360px;
+	_width:358px;
+	font-size:12px;
+	padding-top:5px;
+	padding-bottom:5px;
+	overflow:hidden;
+	clear:both;
+}
+.linksTxt li{
+	float:left;
+	line-height:18px;
+	list-style:none;
+	padding:8px 8px 0px;
+	white-space:nowrap;
+}
+.linksTxt li a{
+	color:#222;
+	float:left;
+	text-decoration:none;
+}
+.linksTxt li a:hover{
+	color:#D02F53;
+	text-decoration:underline;
+}
+
+/* =8 guestbookSiderba�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C-�C�C�C�C�C*/
+.guestbookSiderba {/* ���԰��Ҳ�ר�ÿ�� */
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+  padding:15px 15px;
+  width:188px;
+  font-size:12px;
+  color:#222;
+  line-height:26px;
+}
+
+/* =8 tuijian�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C-�C�C�C�C�C*/
+
+.right_tj_pic li {
+    margin-bottom: 15px;
+    float: left;
+    text-align: center;
+    width: 48%;
+    font-size: 12px;
+    overflow: hidden;
+}
+.right_tj_pic_img img{
+    width: 160px;
+    height: 200px;
+}

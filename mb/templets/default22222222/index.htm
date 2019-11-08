@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>内涵吧_搞笑内涵图_内涵漫画_色系军团邪恶漫画</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/css.css" rel="stylesheet" media="screen" type="text/css" />
+</head>
+<body class="pbody">
+{dede:include filename="header.htm"/}
+<div class="page_box w1180 center">
+  <div class="home_box t15">
+    <div class="home_left">
+      <div class="w360 pleft"> 
+        <!--最新邪恶漫画-->
+        <div class="abox box_shadow w300">
+          <div class="abox_dt"><strong class="ico_01">最新邪恶漫画</strong></div>
+          <dd style="height:300px;">
+            <div class="left_pic_s"> {dede:arclist orderby='pubdate' limit='0,6' typeid='1,2,3,4'} <a href="[field:arcurl/]"  title="[field:fulltitle/]" target='_blank' class="imgC"><img src="[field:litpic/]" alt="[field:fulltitle/]"/>
+              <div></div>
+              </a> {/dede:arclist} </div>
+            <div class="left_list_s t15"> {dede:arclist orderby='pubdate' limit='6,3' typeid='1,2,3,4'} <a href="[field:arcurl/]"  title="[field:fulltitle/]" target='_blank' class="icon"><strong>[field:fulltitle/]</strong><span>[field:pubdate function='strftime("%m-%d",@me)'/]</span></a> {/dede:arclist} </div>
+          </dd>
+        </div>
+        <!--最新邪恶漫画--> 
+      </div>
+      <div class="w480 pright"> 
+        <!--首页幻灯片-->
+        <div class="flash_home">
+          <ul>
+            <!--连载漫画--> 
+            {dede:channelartlist typeid='5' row='2'} <a href="{dede:field.typeurl/}" title="{dede:field.typename/}" target="_blank" class="bimg imgC"> <img src="{dede:field.typeimg/}" alt="{dede:arclist orderby='id' orderway='desc' flag='' limit='0,1'}[field:fulltitle/]{/dede:arclist}"/>
+            <p> <strong>{dede:field.typename/}</strong> <span>更新至：{dede:arclist  orderby='id' orderway='desc' flag='' limit='0,1'}[field:fulltitle/]{/dede:arclist} | {dede:sql sql="select sum(click) as clicksum from #@__archives where typeid=~typeid~" }
+              撸过[field:clicksum/]次
+              {/dede:sql}</span> </p>
+            </a> {/dede:channelartlist} 
+            <!--连载漫画--> 
+            {dede:arclist orderby='pubdate' flag='f' limit='0,3' typeid='1,2,3,4'} <a href="[field:arcurl/]"  title="[field:fulltitle/]" target='_blank' class="bimg imgC"> <img src="[field:litpic/]" alt="[field:fulltitle/]"/>
+            <p> <strong>[field:fulltitle/]</strong> <span>[field:typename/] | 被撸过[field:click/]次 | [field:pubdate function='strftime("%m-%d",@me)'/]</span> </p>
+            </a> {/dede:arclist}
+            <div class="btn"> {dede:channelartlist typeid='5' row='2'} <a href="javascript:;"></a> {/dede:channelartlist}
+              {dede:arclist orderby='pubdate' flag='f' limit='0,3' typeid='1,2,3,4,5'} <a href="javascript:;"></a> {/dede:arclist} </div>
+          </ul>
+        </div>
+        <!--首页幻灯片--> 
+      </div>
+    </div>
+    <div class="home_right">
+      <div class="abox box_shadow w240">
+        <div class="abox_dt_tab"  id="click"> <strong>撸得最爽</strong> <span> <a href="javascript:;" srv="click_w" class="act">周</a> <a href="javascript:;" srv="click_m">月</a> <a href="javascript:;" srv="click_y">年</a> </span> </div>
+        <dd style="height:300px;" id="click_w">
+          <div class="right_pic"> {dede:arclist orderby='click' limit='0,1' subday='7' typeid='1,2,3,4'} <a href="[field:arcurl/]"  title="[field:fulltitle/]" target='_blank' class="imgC" style="height:120px;" ><img src="[field:litpic/]" alt="[field:fulltitle/]"/></a> {/dede:arclist} </div>
+          <div class="right_list t15"> {dede:arclist orderby='click' limit='1,5'  subday='7' typeid='1,2,3,4'} <a href="[field:arcurl/]"  title="[field:fulltitle/]" target='_blank' class="icon" ><strong>[field:fulltitle/]</strong><span>[field:click/]</span></a> {/dede:arclist} </div>
+        </dd>
+        <dd style="height:300px; display:none;" id="click_m">
+          <div class="right_pic"> {dede:arclist orderby='click' limit='0,1' subday='30' typeid='1,2,3,4'} <a href="[field:arcurl/]"  title="[field:fulltitle/]" target='_blank' class="imgC" style="height:120px;" ><img src="[field:litpic/]" alt="[field:fulltitle/]"/></a> {/dede:arclist} </div>
+          <div class="right_list t15"> {dede:arclist orderby='click' limit='1,5'  subday='30' typeid='1,2,3,4'} <a href="[field:arcurl/]"  title="[field:fulltitle/]" target='_blank' class="icon" ><strong>[field:fulltitle/]</strong><span>[field:click/]</span></a> {/dede:arclist} </div>
+        </dd>
+        <dd style="height:300px; display:none;" id="click_y">
+          <div class="right_pic"> {dede:arclist orderby='click' limit='0,1' typeid='1,2,3,4'} <a href="[field:arcurl/]"  title="[field:fulltitle/]" target='_blank' class="imgC" style="height:120px;" ><img src="[field:litpic/]" alt="[field:fulltitle/]"/></a> {/dede:arclist} </div>
+          <div class="right_list t15"> {dede:arclist orderby='click' limit='1,5' typeid='1,2,3,4'} <a href="[field:arcurl/]"  title="[field:fulltitle/]" target='_blank' class="icon" ><strong>[field:fulltitle/]</strong><span>[field:click/]</span></a> {/dede:arclist} </div>
+        </dd>
+      </div>
+    </div>
+  </div>
+  
+  <!--连载列表-->
+  <div class="abox w1120 box_shadow t15">
+    <div class="abox_dt"> <strong class="ico_01">邪恶漫画连载</strong> <small><a href="{dede:global.cfg_basehost/}/comic" title="漫画连载" class="openloading">更多</a></small>
+      <div class="btn_01"><a href="javascript:;" class="prev">后退</a><a href="javascript:;" class="next">前进</a></div>
+    </div>
+    <dd class="comic_list" id="jst_01" style="height:320px; overflow:hidden;">
+      <ul>
+        {dede:channelartlist  typeid='5' row='6'}
+        <li> <a href="{dede:field.typeurl/}" title="{dede:field.typename/}" target="_blank"> <img src="{dede:arclist orderby='id' orderway='desc' flag='' limit='0,1'}[field:litpic/]{/dede:arclist}" alt="{dede:arclist orderby='id' orderway='desc' flag='' limit='0,1'}[field:fulltitle/]{/dede:arclist}"/> <strong>{dede:field.typename/}</strong> <span>更新至：{dede:arclist  orderby='id' orderway='desc' flag='' limit='0,1'}[field:fulltitle/]{/dede:arclist}</span> <span>{dede:sql sql="select sum(click) as clicksum from #@__archives where typeid=~typeid~" }
+          撸过<font style="color:#C00;">[field:clicksum/]</font> 次
+          {/dede:sql}</span> <small>{dede:field.content/}</small> </a> </li>
+        {/dede:channelartlist}
+      </ul>
+    </dd>
+    <!--首页通栏-->
+    <div class="index_tl t15">{dede:myad name='Index_Tl'/}</div>
+    <!--首页通栏--> 
+  </div>
+  <!--连载列表--> 
+  
+  {dede:channelartlist typeid='1,2,3,4'}
+  <div class="home_box t15">
+    <div class="home_left">
+      <div class="abox box_shadow w800">
+        <div class="abox_dt"><strong class="ico_01">{dede:field.typename/}</strong><small><a href="{dede:field.typeurl/}" title="{dede:field.typename/}" class="openloading">更多</a></small></div>
+        <dd class="left_pic_b" style="height:560px;"> {dede:arclist orderby='pubdate' limit='0,10' }
+          <li> <a href="[field:arcurl/]"  title="[field:fulltitle/]" target='_blank' class="imgC"><img src="[field:litpic/]" alt="[field:fulltitle/]"/>
+            <div></div>
+            </a> <strong><a href="[field:arcurl/]"  title="[field:fulltitle/]" target='_blank'>[field:fulltitle/]</a></strong> <span>被撸过<font style="color:#c00;">[field:click/]</font>次 | [field:pubdate function='strftime("%m-%d",@me)'/]</span> </li>
+          {/dede:arclist} </dd>
+      </div>
+    </div>
+    <div class="home_right">
+      <div class="abox box_shadow w240">
+        <div class="abox_dt"><strong>撸主好评</strong> <small><a href="{dede:field.typeurl/}" title="{dede:field.typename/}" class="openloading">更多</a></small> </div>
+        <dd style="height:560px;">
+          <div class="right_pic"> {dede:arclist orderby='scores' limit='0,1'} <a href="[field:arcurl/]"  title="[field:fulltitle/]" target='_blank' class="imgC"><img src="[field:litpic/]" alt="[field:fulltitle/]"/></a> {/dede:arclist} </div>
+          <div class="right_list t15"> {dede:arclist orderby='scores' limit='1,12'} <a href="[field:arcurl/]"  title="[field:fulltitle/]" target='_blank' class="icon" ><strong>[field:fulltitle/]</strong><span>[field:goodpost/]</span></a> {/dede:arclist} </div>
+        </dd>
+      </div>
+    </div>
+  </div>
+  {/dede:channelartlist}
+  <div class="abox box_shadow w1120 t15">
+    <div class="abox_dt" style="width:120px"><strong class="ico_01">友情链接</strong></div>
+    <dd class="flink">{dede:flink/}</dd>
+  </div>
+</div>
+{dede:include filename="footer.htm"/} 
+<script src="{dede:global.cfg_templets_skin/}/js/jquery.soChange-min.js" type="text/javascript"></script> 
+<script src="{dede:global.cfg_templets_skin/}/js/jcarousellite_1.0.1.pack.js" type="text/javascript"></script> 
+<script type="text/javascript">
+$(document).ready(function() {
+	/*首页幻灯片*/
+	$('.flash_home .bimg').soChange({
+	  thumbObj:'.flash_home .btn a',
+	  thumbNowClass:'act',//自定义导航对象当前class为on
+	  thumbOverEvent:true,//是否鼠标经过
+	  autoChange:true, //是否自动切换，默认为true
+	  changeTime:2000,//自定义切换时间为4000ms
+	  slideTime:1000, //平滑过渡时间，默认为1000ms，为0或负值时，忽略changeType方式，切换效果为直接显示隐藏
+	  delayTime:300, //鼠标经过时对象切换迟滞时间，推荐值为300ms
+	  changeType:'fade',//切换方式，可选：fade,slide，默认为fade
+	  overStop:true
+	});
+	
+	/*撸的最爽标签*/
+	$('#click span a').click(function(){
+		var ddid=$(this).attr('srv');
+		$(this).addClass('act').siblings().removeClass('act');
+		$('#'+ddid).show().siblings('dd').hide();
+		$('#'+ddid +" img").LoadImage();
+	}) ;
+	
+	$('#jst_01').jCarouselLite({
+		visible: 6,
+		scroll:6,
+		btnNext: ".next",
+		btnPrev: ".prev",
+		speed:800,
+		auto:4000,
+		onMouse:true
+	});
+	
+});
+</script>
+</body>
+</html>

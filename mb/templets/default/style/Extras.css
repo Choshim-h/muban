@@ -1,0 +1,233 @@
+/*
+
+[Ä¿Â¼±í] 
+
+	1- commentBox      ÎÄÕÂÒ³ÆÀÂÛÊäÈë¿ò¼Ü
+	2- commentLayout   ÎÄÕÂÒ³ÆÀÂÛÄÚÈÝ¿ò¼Ü
+	3- commetpages     ÎÄÕÂÆÀÂÛ·ÖÒ³
+	
+*/
+
+
+/* =1 commentBox¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C-¨C¨C¨C¨C¨C¨C*/
+#commentBox{/* ÎÄÕÂÒ³ÆÀÂÛ±íµ¥¿ò¼Ü */
+	float:left;
+	width:750px;
+	margin-bottom:20px;
+	background:#fff;
+	border:1px solid #CCC;
+	clear:both;
+	overflow:hidden;
+}
+.commentPost{/* êÇ³ÆºÍÑéÖ¤Âë */
+	width:680px;
+	height:25px;
+	margin:25px auto;
+}
+.commentUserinfo{/* êÇ³Æ */
+	float:left;
+	font-size:14px;
+	color:#000;
+}
+.commentUserinfo input{/* ÊäÈë¿ò */
+	height:14px;
+	width:150px;
+	padding:6px 3px;
+	font-family:Î¢ÈíÑÅºÚ;
+	font-size:14px;
+	line-height:15px;
+	background:#F8F7F6;
+	border:1px solid #D6D3D3;
+	vertical-align:middle;
+}
+.yanzhengma{/* ÑéÖ¤Âë */
+	float:left;
+	padding:1px 0px 0px 15px;
+}
+.commentArea{/* ÊäÈëÎÄ±¾¿ò */
+	width:680px;
+	margin:0px auto;
+}
+.commentArea textarea{
+	height:130px;
+	width:656px;
+  padding:10px;
+  _padding:10px 5px;
+	font-family:Î¢ÈíÑÅºÚ;
+	font-size:14px;
+	line-height:25px;
+	overflow:hidden;
+	background:#f8f7f6;
+	border:1px solid #D6D3D3;
+}
+
+
+.commentMood{/* ±íÇé */
+	margin:10px auto 0px auto;
+	width:690px;
+}
+.commentMood ul{
+	float:left;
+}
+.commentMood ul li{
+	float:left;
+	padding:10px 12px 10px 5px;
+}
+.commentMood ul li input,.commentMood ul li img{
+	margin-right:4px;
+	vertical-align:middle;
+}            
+.commentSubmit{/* Ìá½»°´Å¥ */
+	float:left;
+	width:580px;
+	padding:15px 19px 25px 19px;
+}
+.commentSubmit button{
+	cursor:pointer;
+	height:35px;
+	width:100px;
+	vertical-align:middle;
+	color:#fff;
+	font-family:Î¢ÈíÑÅºÚ;
+	font-size:14px;
+	border:none;
+	background:#4F4E4C;
+}
+
+/* =2 commentLayout¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C*/
+#commentLayout{/* ÆÀÂÛÄÚÈÝ¿ò¼Ü */
+	float:left;
+	width:750px;
+	height:100%;
+	margin:5px auto;
+	padding-bottom:50px;
+	background:#fff;
+	border:1px solid #CCC;
+}
+
+.dede_comment .decmt-box{
+	width:98%;
+	margin:0px auto;
+	background:#fff;
+	border-bottom:1px dashed #ccc;
+	overflow:hidden;
+	clear:both;
+}
+.dede_comment .decmt-box .decmt-title{
+	float:left;
+	width:500px;
+	height:100%;
+}
+.decmt-title a.plpic{/* ÆÀÂÛÍ·Ïñ */
+	float:left;
+	height:40px;
+	width:40px;
+	padding:20px 0px 20px 15px;
+	overflow:hidden;
+}
+
+.usernameBox{
+	float:left;
+	width:300px;
+	height:100%;
+	margin:10px 0px 0px 0px;
+}
+.username{/* ÆÀÂÛêÇ³Æ */
+	float:left;
+	font-size:14px;
+	color:#3354AA;
+	padding:8px 0px 0px 14px;
+}
+.username a{
+	color:#3354AA;
+	text-decoration:none;
+}
+.username a:hover{
+	color:#333;
+}
+.date{/* ÆÀÂÛÈÕÆÚ */
+	float:left;
+	width:300px;
+	height:100%;
+	color:#999;
+	font-size:12px;
+	font-family:Georgia;
+	margin:5px 0px 0px 15px;
+}
+.decmt-act{
+	float:right;
+	font-size:12px;
+	color:#ccc;
+	line-height:28px;
+	margin:20px 20px 20px 0px;
+}
+.decmt-act span{
+	margin-right:7px;
+}
+.decmt-act span a{
+	color:#3354AA;
+	text-decoration:none;
+}
+.decmt-act span a:hover{
+	color:#D02F53;
+}
+.decmt-content{
+	width:96%;
+	color:#000;
+	font-size:14px;
+	line-height:28px;
+	margin:10px auto;
+	clear:both;
+}
+.decmt-content img{
+	vertical-align:middle;
+}
+.dede_comment .decmt-box .decmt-box{
+	background:#F8F8F8;
+	border:1px dashed #ccc;
+	margin:6px auto;
+}
+.dede_comment .decmt-box .decmt-box .decmt-title .username{
+	text-indent:0px;
+	font-style: italic;
+	padding-bottom:5px;
+}
+.dede_comment .decmt-box .decmt-box .decmt-content{
+	color:#555;
+}
+.replyBoxQuote{/* ÆÀÂÛÒýÓÃ */
+	float:left;
+	width:700px;
+	height:30px;
+	line-height:25px;
+	text-align:right;
+}
+.replyBoxQuote a{
+	color:#3354AA;
+	font-size:11px;
+	text-decoration:none;
+}
+.replyBoxQuote a:hover{
+	text-decoration:underline;
+}
+
+/* =3 commetpages¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C*/
+#commetpages{/* ÆÀÂÛ·ÖÒ³ */
+	color:#222;
+	font-size:12px;
+	text-align:center;
+	margin-top:30px;
+	padding-right:5px;
+}
+
+#commetpages a {
+	color:#222;
+	font-size:12px;
+	padding:3px;
+	text-decoration:none;
+}
+#commetpages a:hover{
+	background-color:#444;
+	color:#fff;
+	text-decoration:none;
+}

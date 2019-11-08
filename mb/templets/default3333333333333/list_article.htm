@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{dede:field.seotitle /} - {dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="/css/class.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="/js/pc.js"></script>
+</head>
+
+<body>
+{dede:include filename="head.htm"/}
+
+<div class="baidu1"><script src='/js/baidu1.js' language='javascript'></script></div>
+
+<div id="main-box">
+
+<div id="home"><strong>当前位置:</strong> {dede:field name='position'/}</div>
+
+<div class="list-box">
+
+<div class="class-l">
+<div class="class-title">
+<div class="title1">全部{dede:field name='typename' function="GetTypeName（@me）"/}</div>
+</div>
+<div class="class">
+<ul>
+{dede:list row='15' titlelen='40' type='image.'}
+<li><a href="#">[field:imglink/][field:textlink/]</a></li>
+{/dede:list}</ul>
+</div>
+<div class="pages"><ul>{dede:pagelist listitem="pre,next,pageno" listsize="5"/}</ul></div>
+<div class="clear"></div>
+</div>
+
+<div class="class-r">
+
+<div class="tj-box">
+<div class="tj-title"><div class="title1">本类推荐内容</div></div>
+<div class="tj">
+<ul>
+{dede:arclist row=10 titlelen=40 orderby=pubdate}
+<li><a href="[field:arcurl/]">[field:title/]</a></li>
+{/dede:arclist}
+</ul>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="hot-box">
+<div class="hot-title"><div class="title1">本类热门内容</div></div>
+<div class="hot">
+<ul>
+{dede:arclist row=10 titlelen=40 orderby=click}
+<li><a href="[field:arcurl/]">[field:title/]</a></li>
+{/dede:arclist}
+</ul>
+</div>
+<div class="clear"></div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div id="footer">
+本站漫画均来自互联网,这是一个注重分享交流的网站,为了建设健康向上的网络环境,请未满18周岁的少年在家长的陪同下观看。<br  />
+如果喜欢，请支持正版！若侵犯到您的权益，联系我们处理。
+</div>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e69d1524bb51767b34999e4987934830";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script src='/js/tongji.js' language='javascript'></script>
+</body>
+</html>

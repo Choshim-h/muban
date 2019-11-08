@@ -1,0 +1,35 @@
+<!-- 网站头部 -->
+<div id="top">
+<div class="top-box">
+<div class="top-logo"><a href="/"><img src="/images/logo.png" /></a></div>
+<div class="top-cover"></div>
+
+<div class="top-search">
+<form  name="formsearch" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+<div class="search">
+<input class="search-keyword" name="q" type="text" value="全彩" onFocus="if(this.value=='全彩'){this.value='';}"  onblur="if(this.value==''){this.value='全彩';}" />
+<button type="submit" class="search-submit">搜索</button>
+</div>
+</form>
+<div class="tags">
+<span class="tags-h4">热门标签:</span>
+<ul>{dede:tag row='5' getall='1' sort='month'}<li><a href='[field:link/]'>[field:tag /]</a></li>{/dede:tag}
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id="nav">
+<div class="nav-box">
+<ul>
+<li><a href="/">网站首页</a></li>
+<li><a href="/shaonv/">邪恶漫画</a></li>
+<li><a href="/manhua/">邪恶同人</a></li>
+<li><a href="/gif/">邪恶动态图</a></li>
+<li><a href="/neihan/">内涵漫画</a></li>
+</ul>
+</div>
+</div>
+<!-- 头部结束 -->

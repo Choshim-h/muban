@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>{dede:field.seotitle /}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/css.css" rel="stylesheet" media="screen" type="text/css" />
+</head>
+<BODY class=pbody>
+{dede:include filename="header.htm"/}
+<div class="page_box w1180 center">
+  <!--当前位置-->
+  <div class="position box_shadow t15">
+    <strong>{dede:field.typename/}</strong>
+    <span>
+      {dede:tag row='10'  sort='' getall='1'}
+      <a href='[field:link/]' class='openloading'>[field:tag /]</a>
+      {/dede:tag}
+    </span>
+    <small>当前位置: {dede:field.position/}</small>
+  </div>
+  <!--当前位置-->
+  
+  <!--漫画列表-->
+  <div class="img_list t15">
+    <ul>
+    {dede:list pagesize='25'}
+      <li class="box_shadow">
+      <a href="[field:arcurl/]" title="[field:title function='html2text(@me)'/]" target="_blank" class="imgC"><img src="[field:litpic/]" alt="[field:fulltitle/]"/></a>
+      <a href="[field:arcurl/]" title="[field:title function='html2text(@me)'/]" target="_blank" class=""><strong>[field:title/]</strong></a>
+      <a href="[field:arcurl/]" title="[field:title function='html2text(@me)'/]" target="_blank" class=""><span>被撸过 <font style="color:#c00;">[field:click/] 次</font> | [field:pubdate function='strftime("%m-%d",@me)'/]</span></a>
+      </li>
+    {/dede:list}
+    </ul>
+  </div>
+  <!--漫画列表-->
+  <!--分页-->
+  <div class="page">{dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="5"/}</div>
+  <!--分页-->
+</div>
+{dede:include filename="footer.htm"/}
+<script type="text/javascript">
+$(document).ready(function() {
+	//居中
+	$('.page').Jcenter();
+	$('.digg').Jcenter();
+});
+</script>
+</BODY>
+</HTML>

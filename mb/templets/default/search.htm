@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<meta name="keywords" content="{dede:global name='keyword' function='RemoveXSS(@me)'/}" />
+<meta name="description" content="{dede:global name='keyword' function='RemoveXSS(@me)'/}" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+<meta name="robots" content="all" />
+<title>{dede:global name='keyword' function='RemoveXSS(@me)'/}_{dede:global.cfg_webname/}</title>
+<!-- <link href="{dede:global.cfg_templets_skin/}/style/style.css" rel="stylesheet" media="screen" type="text/css" /> -->
+<link rel="stylesheet" href="/images/css/search_m.css">
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/biaoqianyun.js"></script>
+<script language="javascript" type="text/javascript"></script>
+<script src="/images/js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+{dede:include filename="header.htm"/}
+<!-- /header -->
+<div id="searchBox">
+	<form action="{dede:global.cfg_cmsurl/}/plus/search.php" class="form" name="formsearch" style="width: 100%;display:flex;">         
+	<input name="keyword" type="text" class="searchInput" id="search-keyword" value="SEARCH THE SITE" onFocus="if(this.value=='SEARCH THE SITE'){this.value='';}"  onblur="if(this.value==''){this.value='SEARCH THE SITE';}"/>         	  	
+	<input name="submit" type="image" class="searchSubmit" src="{dede:global.cfg_templets_skin/}/images/search_btn.jpg" alt="" />	
+  </form>
+</div>
+<!-- searchBox -->
+<div id="container">
+  <div id="main">
+	   <div id="place">
+		   <strong>{dede:global name='keyword' function='RemoveXSS(@me)'/}</strong>
+	   </div>
+	   <br/>
+    {dede:list perpage='20'}
+	   <div id="listBox">
+			   <div class="listBoxTop">
+				   <div class="listBoxComment">
+					   <span class="countComments">[field:scores/]</span>
+					   <span class="txtComments">Comments</span>
+				   </div>
+				   <div class="listBoxTitle">
+					   <h2><a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a></h2>
+					   <span class="timeAuthor">
+						   <small>[field:pubdate function="MyDate('y-m-d',@me)"/]</small>&#160;&#160;|&#160;&#160;&#160;<small>[field:writer/]</small>
+				  	 </span>
+				   </div>
+			   </div>
+			   <div class="listBoxCenter">
+				   [field:array runphp='yes']@me = (strpos(@me['litpic'],'defaultpic') ? "" : "<a href='{@me['arcurl']}'><img src='{@me['litpic']}'/></a>"); [/field:array]
+				   <p class="articleIntro">[field:description/]</p>
+				   <p class="readMore"><a href="[field:arcurl/]"></a></p>
+			   </div>
+			   <div class="listBoxBottom">
+					 <small class="listBoxBottomTag">[field:id function=GetTags(@me)/]</small>
+					 <small class="listBoxBottomClick"><a target="_blank" href='[field:typeurl/]'>[field:typename/]</a>[field:click/]</small>
+			   </div>
+		 </div>
+     {/dede:list}
+    <div class="pages">
+				<ul>
+          {dede:pagelist listitem="pre,next" listsize="5"/}
+			  </ul>
+		</div>
+  </div>
+  <div id="sidebar">
+	   <div id="searchBox">
+  	    <form action="{dede:global.cfg_cmsurl/}/plus/search.php"" class="form" name="formsearch">
+          <h4></h4>          
+          <input name="keyword" type="text" class="searchInput" id="search-keyword" value="SEARCH THE SITE" onfocus="if(this.value=='SEARCH THE SITE'){this.value='';}"  onblur="if(this.value==''){this.value='SEARCH THE SITE';}"/>         	  	
+          <input name="submit" type="image" class="searchSubmit" src="{dede:global.cfg_templets_skin/}/images/search_btn.jpg" alt="" />	
+        </form>
+     </div>	
+	   <div id="ad_1">
+  	   <a href="#"><img src="{dede:global.cfg_templets_skin/}/images/ad_1.jpg" alt="" title=""/></a>
+     </div>
+     <div id="sidebarBox">
+  	   <div class="boxTop">
+  		   <h2></h2>
+  	   </div>
+  	   <div class="guestbookSiderba">
+  		   <ul>
+         <li></li>
+         <li>&#160;&#160;&#160;&#160;&#160;</li>
+         <li></li>
+         <li>&#160;&#160;&#160;&#160;&#160;</li>
+         <li>&#160;&#160;&#160;&#160;&#160;</li>
+         <li></li>
+         <li>&#160;&#160;&#160;&#160;&#160;monkeii.lee#gmail.com</li>
+         <li></li>
+         </ul>
+  	   </div>
+     </div>
+  </div>
+</div>
+{dede:include filename="footer.htm"/}
+<!-- /footer -->
+
+<script>
+		$(function () {
+			$('aside.slide-wrapper').on('touchstart', 'li', function (e) {
+				$(this).addClass('current').siblings('li').removeClass('current');
+			});
+
+			$('a.slide-menu').on('click', function (e) {
+				var wh = $('div.wrapperhove' + 'rtree').height();
+				$('div.slide-mask').css({height: '100%', width: '100%'}).show();
+				$('aside.slide-wrapper').css({height: '100%', width: '70%', display: 'block'}).addClass('moved');
+				$('.wrapperhovertree').css({height:'100%'});
+				$('#navMenu').css({height:'100%', width: '100%', display:'block'});
+			});
+
+			$('div.slide-mask').on('click', function () {
+				$('div.slide-mask').hide();
+				$('aside.slide-wrapper').removeClass('moved');
+				$('.wrapperhovertree').css({height:'auto'});
+				$('#navMenu').css({height:'0', display:'none'});
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{dede:field.title/} - {dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="/css/tags.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="/js/pc.js"></script>
+</head>
+
+<body>
+{dede:include filename="head.htm"/}
+
+<div class="baidu1"><script src='/js/baidu1.js' language='javascript'></script></div>
+
+<div id="main-box">
+<div id="search-box">
+
+<form  name="formsearch" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+<div class="all-search">
+<input class="big-search" name="q" type="text" value="输入关键字并按回车搜索" onFocus="if(this.value=='输入关键字并按回车搜索'){this.value='';}"  onblur="if(this.value==''){this.value='输入关键字并按回车搜索';}" />
+</div>
+</form>
+<div class="tips-search">
+<div class="tips-l">搜索提示</div>
+<div class="tips-r">
+1、为了服务器的稳定，请勿多次重复搜索同一个关键字；<br  />
+2、只要输入你想搜索的关键字，系统将会自动根据标题和文章内容进行检索；
+</div>
+</div>
+
+<div id="result-box">
+<div class="result-bar">全部 <strong>{dede:field.title /}</strong> 内容</div>
+{dede:list orderby='click' pagesize='10'}
+<div class="result">
+<div class="result-pic">[field:array runphp='yes']@me = (strpos(@me['litpic'],'defaultpic') ? "" : "<a href='{@me['arcurl']}'><img src='{@me['litpic']}'/></a>"); [/field:array]</div>
+<div class="result-title"><a href="[field:arcurl/]" target="_blank">[field:title/]</a></div>
+<div class="result-info">
+<div class="result-tag">
+<ul><li><a target="_blank" href='[field:typeurl/]'>[field:typename/]</a></li></ul>
+</div>
+<div class="result-time">发布于：[field:pubdate function="MyDate('y-m-d',@me)"/] | 围观人数：[field:click/]人</div>
+<div class="result-text">[field:description/]...</div>
+</div>
+</div>
+{/dede:list}
+<div class="dede_pages">
+<ul class="pagelist">
+{dede:pagelist listsize='4'/}  
+</ul>
+</div>
+
+<div class="hot-box">
+<div class="hot-title">大家正在看的啪啪啪漫画</div>
+<div class="hot">
+<ul>
+<li><a href="#"><script src='/plus/mytag_js.php?aid=2' language='javascript'></script></a></li>
+</ul>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div id="footer">
+本站漫画均来自互联网,这是一个注重分享交流的网站,为了建设健康向上的网络环境,请未满18周岁的少年在家长的陪同下观看。<br  />
+如果喜欢，请支持正版！若侵犯到您的权益，联系我们处理。
+</div>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e69d1524bb51767b34999e4987934830";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script src='/js/tongji.js' language='javascript'></script>
+</body>
+</html>

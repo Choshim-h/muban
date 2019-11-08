@@ -1,0 +1,39 @@
+<div class="footer">
+  <p> <span> <a href="{dede:global.cfg_cmsurl/}/" class="home openloading">{dede:global.cfg_indexname/}</a> | 
+    {dede:channel type='top'}<a href="[field:typeurl/]" title="[field:typename/]" class="openloading">[field:typename/]</a> |  {/dede:channel}</span> </p>
+  <p> <span> 本站所有漫画均来自网上，仅供试看，不提供下载。如果喜欢，请支持正版！ </span> </p>
+  <p> COPYRIGHT &copy; 2015 <strong>www.neihanba.net</strong> {dede:global.cfg_indexname/} 版权所有 </p>
+  <p> <span>程序由dede168源码网<strong><a href="http://www.dede168.com" target="_blank">www.dede168.com</a></strong>测试提供</span> </p>
+</div>
+<script src="{dede:global.cfg_templets_skin/}/js/jquery-1.10.2.min.js" type="text/javascript"></script> 
+<script src="{dede:global.cfg_templets_skin/}/js/public.js" type="text/javascript"></script> 
+<script type="text/javascript">
+$(document).ready(function() {
+	//加载loading
+	openloading();
+	$('.openloading').click(function(){
+		closeloading();
+		openloading();
+	});
+	//顶部导航ACT
+	var typename = "{dede:field name='typeid' function='GetTopTypename(@me)' /}";
+	if (typename == 0)
+	{
+		$(".nav_btn a").first().addClass('act');
+	}
+	else
+	{
+	  $(".nav_btn a:contains({dede:field name='typeid' function='GetTopTypename(@me)' /})").addClass('act');
+	}
+	//加载图片
+	$(".imgC img").LoadImage();
+	
+	$('.comic_list small:contains("连载")').css({'background-position':'0px 0px'});
+	$('.comic_list small:contains("完结")').css({'background-position':'0px -82px'});
+
+});
+
+$(window).load(function(){
+	closeloading();
+});
+</script>

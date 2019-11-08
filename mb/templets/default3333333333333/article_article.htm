@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{dede:field.title/} - {dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="/css/content.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="/js/pc.js"></script>
+</head>
+
+<body>
+{dede:include filename="head.htm"/}
+
+<div class="baidu1"><script src='/js/baidu1.js' language='javascript'></script></div>
+
+<div id="main">
+<div id="home"><strong>当前位置:</strong> {dede:field name='position'/}</div>
+
+<div class="list-box">
+<div id="title">{dede:field.title/}</div>
+<div id="info">发布时间：{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/} | 被围观: <span class="t1"><script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script></span> 次</div>
+
+<div class="list-tags">
+<ul>
+<li><strong>标签：</strong></li>
+<li>{dede:tag type='current'/}</li>
+</ul>
+</div>
+
+<div id="left">
+<div class="left-box">
+
+{dede:field.description runphp='yes'}
+if(@me<>'' )@me = '
+<div class="intro">'.@me.'</div>
+  ';
+{/dede:field.description}
+
+<div class="baidu4"><script src='/js/baidu4.js' language='javascript'></script></div>
+<div class="pic">{dede:field.body/}</div>
+<div class="baidu5"><script src='/js/baidu5.js' language='javascript'></script></div>
+<div class="flip">
+<div class="prev"><a href="#">上一页</a></div>
+<div class="next"><a href="#">下一页</a></div>
+</div>
+<div class="dede_pages_all">
+<div class="dede_pages">
+<span>章节分页：</span>
+<ul class="pagelist">	
+<li>{dede:pagebreak/}</li>
+</ul>
+</div>
+</div>
+
+<div class="context">
+<ul>
+<li>{dede:prenext get='pre'/}</li>
+<li>{dede:prenext get='next'/}</li>
+</ul>
+</div>
+
+</div>
+
+<div class="like-box">
+<div class="like-title">猜你喜欢</div>
+<div class="like">
+<ul>
+{dede:likearticle col='1' row='4' titlelen='32'}
+<li>[field:imglink/][field:textlink/]</li>
+{/dede:likearticle}
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="right">
+
+<div class="baidu2"><script src='/js/baidu2.js' language='javascript'></script></div>
+
+<div class="shaonv-box">
+<div class="shaonv-title">邪恶少女漫画</div>
+<div class="shaonv">
+<ul>
+{dede:arclist row='4' titlelen='32' orderby='pubdate' typeid='1' type='image.'}
+<li><a href="#">[field:imglink/][field:textlink/]</a></li>
+{/dede:arclist}
+</ul>
+</div>
+</div>
+
+<div class="baidu3"><script src='/js/baidu3.js' language='javascript'></script></div>
+
+<div class="manhua-box">
+<div class="manhua-title">邪恶同人漫画</div>
+<div class="manhua">
+<ul>
+{dede:arclist row='4' titlelen='32' orderby='pubdate' typeid='2' type='image.'}
+<li><a href="#">[field:imglink/][field:textlink/]</a></li>
+{/dede:arclist}
+</ul>
+</div>
+</div>
+
+<div class="gif-box">
+<div class="gif-title">邪恶动态图</div>
+<div class="gif">
+<ul>
+{dede:arclist row='2' titlelen='32' orderby='pubdate' typeid='3' type='image.'}
+<li><a href="#">[field:imglink/][field:textlink/]</a></li>
+{/dede:arclist}
+</ul>
+</div>
+</div>
+
+<div class="neihan-box">
+<div class="neihan-title">内涵漫画</div>
+<div class="neihan">
+<ul>
+{dede:arclist row='2' titlelen='32' orderby='pubdate' typeid='4' type='image.'}
+<li><a href="#">[field:imglink/][field:textlink/]</a></li>
+{/dede:arclist}
+</ul>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div id="footer">
+本站漫画均来自互联网,这是一个注重分享交流的网站,为了建设健康向上的网络环境,请未满18周岁的少年在家长的陪同下观看。<br  />
+如果喜欢，请支持正版！若侵犯到您的权益，联系我们处理。
+</div>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e69d1524bb51767b34999e4987934830";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script src='/js/tongji.js' language='javascript'></script>
+</body>
+</html>

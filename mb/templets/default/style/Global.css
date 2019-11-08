@@ -1,0 +1,39 @@
+
+/* =2 ȫ�ֱ��� Global�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C-�C�C�C�C�C�C*/
+html, body{width: 100%;}
+body {
+	line-height: 1;
+	font: normal 12px "Microsoft YaHei","΢���ź�","Microsoft JhengHei","Verdana","Helvetica","sans-serif","����";
+	background: #F8F8F8;
+	color: #333;
+	margin: 0 auto;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+.clearfix{
+	clear:both;
+	display: block;
+  overflow:hidden;
+}
+html[xmlns] .clearfix {
+	display: block;
+}
+* html .clearfix {
+	height: 1%;
+}
+html{
+	scrollbar-face-color:#c8c8c8;
+	scrollbar-highlight-color:#c8c8c8;
+	scrollbar-shadow-color:#fff;
+	scrollbar-3dlight-color:#fff;
+	scrollbar-arrow-color:#fff;
+	scrollbar-track-color:#EAEAEA;
+	scrollbar-darkshadow-color:#c8c8c8;
+}
+

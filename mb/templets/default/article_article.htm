@@ -1,0 +1,117 @@
+<!DOCTYPE html	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+	<meta name="keywords" content="{dede:field.keywords/}" />
+	<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+	<meta name="robots" content="all" />
+	<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+	<link rel="stylesheet" href="/images/css/article_m.css">
+	<!-- <link href="{dede:global.cfg_templets_skin/}/style/style.css" rel="stylesheet" media="screen" type="text/css" /> -->
+	<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+	<script language="javascript" type="text/javascript"
+		src="{dede:global.cfg_templets_skin/}/js/biaoqianyun.js"></script>
+	<script language="javascript" type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/pc.js"></script>
+	<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery-1.7.2.min.js"></script>
+	<script src="/images/js/jquery-2.1.4.min.js"></script>
+</head>
+
+<body>
+	{dede:include filename="header.htm"/}
+	<!-- /header -->
+	<div id="searchBox">
+		<form action="{dede:global.cfg_cmsurl/}/plus/search.php" class="form" name="formsearch"	style="width: 100%;display:flex;">
+			<input name="keyword" type="text" class="searchInput" id="search-keyword" value="SEARCH THE SITE" onFocus="if(this.value=='SEARCH THE SITE'){this.value='';}" onblur="if(this.value==''){this.value='SEARCH THE SITE';}" />
+			<input name="submit" type="image" class="searchSubmit"	src="{dede:global.cfg_templets_skin/}/images/search_btn.jpg" alt="" />
+		</form>
+	</div>
+	<!-- searchBox -->
+	<div id="container">
+		<div id="main">
+			<div id="listBox">
+				<div class="listBoxTop">
+					<div class="listBoxComment">
+						<span class="countComments">{dede:field.pubdate function="MyDate('d',@me)"/}</span>
+						<span class="txtComments">{dede:field.pubdate function="MyDate('m',@me)"/}</span>
+					</div>
+					<div class="listBoxTitle">
+						<h2>{dede:field.title/}</h2>
+						<span class="timeAuthor">
+							<small>{dede:field name='position'/}</small>
+						</span>
+					</div>
+				</div>
+				<div class="content">
+					{dede:field.body/}
+
+				</div>
+
+				<div class="dede_pages_all">
+					<div class="dede_pages">
+						<ul class="pagelist">
+							{dede:pagebreak/}
+						</ul>
+					</div>
+				</div>
+
+				<div class="context">
+					<ul>
+						<li>{dede:prenext get='pre'/}</li>
+						<li>{dede:prenext get='next'/}</li>
+					</ul>
+				</div>
+
+				<div class="listBoxBottom">
+					<small class="listBoxBottomTag">{dede:tag type='current'/}</small>
+					<small class="digg" id="newdigg">
+						<script language="javascript" type="text/javascript">getDigg({ dede: field.id /});</script></small>
+				</div>
+			</div>
+			<div id="otherBox">
+				<h3></h3>
+				<ul class="relateArticle">
+					{dede:arclist row=4}
+					<li><a href="[field:arcurl/]" target="_blank"><img alt="[field:title/]" src="[field:litpic/]"></a><a
+							href="[field:arcurl/]" target="_blank">[field:title/]</a></li>
+					{/dede:arclist}
+				</ul>
+			</div>
+		</div>
+		<!-- //�����Ҳ����� -->
+		<!-- {dede:include filename="sidebar.htm"/}	 -->
+	</div>
+	{dede:include filename="footer.htm"/}
+	<!-- /footer -->
+	<script>
+		var $a = $(".pagelist a");
+		var patt = new RegExp("\'(.*)\'");
+		if ($a.length == 0) $(".dede_pages_all").css('display', 'none');
+
+	</script>
+	<script>
+		$(function () {
+			$('aside.slide-wrapper').on('touchstart', 'li', function (e) {
+				$(this).addClass('current').siblings('li').removeClass('current');
+			});
+
+			$('a.slide-menu').on('click', function (e) {
+				var wh = $('div.wrapperhove' + 'rtree').height();
+				$('div.slide-mask').css({ height: '100%', width: '100%' }).show();
+				$('aside.slide-wrapper').css({ height: '100%', width: '70%', display: 'block' }).addClass('moved');
+				$('.wrapperhovertree').css({ height: '100%' });
+				$('#navMenu').css({ height: '100%', width: '100%', display: 'block' });
+			});
+
+			$('div.slide-mask').on('click', function () {
+				$('div.slide-mask').hide();
+				$('aside.slide-wrapper').removeClass('moved');
+				$('.wrapperhovertree').css({ height: 'auto' });
+				$('#navMenu').css({ height: '0', display: 'none' });
+			});
+		});
+	</script>
+</body>
+
+</html>

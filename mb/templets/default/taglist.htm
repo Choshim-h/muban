@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<meta name="keywords" content="ZDACG,标签,热门标签,TAG,标签：{dede:field.title /}" />
+<meta name="description" content="ZDACG有关“{dede:field.title /}”标签（TAG）的相关日志展示页面" />
+<meta name="robots" content="all" />
+<meta name="author" content="Monkeii,www.1h1y.cn" />
+<meta name="generator" content="dedecms v5.7 GBK" />
+<meta name="template" content="1H1Y 2.0" />
+<title>TAG标签：{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<link href="{dede:global.cfg_templets_skin/}/style/style.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript">
+<!--
+function check(){
+		if(document.formsearch.searchtype.value=="")
+		document.formsearch.action="http://www.google.cn/custom"
+		else
+		document.formsearch.action="{dede:field name='phpurl'/}/search.php"
+	} 
+-->
+</script>
+</head>
+<body>
+{dede:include filename="header.htm"/}
+<!-- /header -->
+<div id="container">
+  <div id="main">
+	   <div id="place">
+		   <strong>当前位置：</strong> <a href="{dede:global.cfg_cmsurl/}/">一花一叶</a> > <a href='tags.php'>TAG标签</a> > {dede:field.title /}
+	   </div>
+	   <br/>
+    {dede:list orderby='sortrank' pagesize='7'}
+	   <div id="listBox">
+			   <div class="listBoxTop">
+				   <div class="listBoxComment">
+					   <span class="countComments">[field:scores/]</span>
+					   <span class="txtComments">Comments</span>
+				   </div>
+				   <div class="listBoxTitle">
+					   <h2><a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a></h2>
+					   <span class="timeAuthor">
+						   发布于：<small>[field:pubdate function="MyDate('y-m-d',@me)"/]</small>&#160;&#160;|&#160;&#160;&#160;作者：<small>[field:writer/]</small>
+				  	 </span>
+				   </div>
+			   </div>
+			   <div class="listBoxCenter">
+				   [field:array runphp='yes']@me = (strpos(@me['litpic'],'defaultpic') ? "" : "<a href='{@me['arcurl']}'><img src='{@me['litpic']}'/></a>"); [/field:array]
+				   <p class="articleIntro">[field:description/]</p>
+				   <p class="readMore"><a href="[field:arcurl/]">+阅读全文</a></p>
+			   </div>
+			   <div class="listBoxBottom">
+					 <small class="listBoxBottomTag">标签：[field:id function=GetTags(@me)/]</small>
+					 <small class="listBoxBottomClick">日志分类：<a target="_blank" href='[field:typeurl/]'>[field:typename/]</a>围观群众：[field:click/]人</small>
+			   </div>
+		 </div>
+     {/dede:list}
+    <div class="pages">
+				<ul>
+          {dede:pagelist listitem="pre,next" listsize="5"/}
+			  </ul>
+		</div><!-- /标签列表分页 -->
+  </div>
+  <div id="sidebar">
+	   <div id="searchBox">
+  	    <form action="{dede:global.cfg_cmsurl/}/plus/search.php"" class="form" name="formsearch">
+          <h4>搜索</h4>          
+          <input name="keyword" type="text" class="searchInput" id="search-keyword" value="SEARCH THE SITE" onfocus="if(this.value=='SEARCH THE SITE'){this.value='';}"  onblur="if(this.value==''){this.value='SEARCH THE SITE';}"/>         	  	
+          <input name="submit" type="image" class="searchSubmit" src="{dede:global.cfg_templets_skin/}/images/search_btn.jpg" alt="点击搜索!" />	
+        </form>
+     </div>	
+	   <div id="ad_1">
+  	   <a href="#"><img src="{dede:global.cfg_templets_skin/}/images/ad_1.jpg" alt="请爱护地球的每一花一叶！！" title="请爱护地球的每一花一叶！"/></a>
+     </div>
+     <div id="sidebarBox">
+  	   <div class="boxTop">
+  		   <h2>热门日志</h2>
+  	   </div>
+  	   <div class="boxContent">
+  		   <ul>
+         {dede:arclist row=10 col='1' titlelen=28 orderby='click' typeid='all'}
+         <li><a href="[field:arcurl/]">[field:title/]</a></li>
+         {/dede:arclist}
+         </ul>
+  	   </div>
+     </div>
+     <div id="sidebarBox">
+  	   <div class="boxTop">
+  		   <h2>友情链接</h2>
+  	   </div>
+  	   <div class="boxContent">
+         <ul class="linksImg">
+			     {dede:flink type='image' row='6'/}
+		     </ul>
+  		   <ul class="linksTxt">
+			     {dede:flink type='text' row='6'/}
+		     </ul>
+  	   </div>
+  </div>
+
+  </div>
+</div>
+{dede:include filename="footer.htm"/}
+<!-- /footer -->
+</body>
+</html>

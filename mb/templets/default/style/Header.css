@@ -1,0 +1,109 @@
+/*
+[Ŀ¼��] 
+	1- header          ����ͷ����ʽ
+	2- navMenu         �����˵�
+	3- sub             LOGO����վ˵�����֡�΢����RSS�������ӵ���ʽ
+*/
+
+
+/* =1 header�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C*/
+#header {
+/* ����ͷ�� */
+	width: 100%;
+	background: url(../images/menu_bg.jpg) repeat-x;
+	height: 50px;
+	max-width: 768px;
+	margin: 0 auto;
+}
+
+#header-n {
+	width: 100%;
+	margin: auto;
+}
+/* =2 zdacglogo�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C*/
+#zdacglogo {
+	width: 175px;
+	height: 39px;
+	float: left;
+	margin-top: 7px;
+	margin-right: 15px;
+}
+/* =3 navMenu�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C*/
+#navMenu {
+/* �����˵� */
+	width: 70%;
+	min-width: 130px;
+	float: left;
+}
+
+#navMenu ul {
+	margin: auto;
+	height: 50px;
+	width: 100%;
+	overflow: hidden;
+}
+
+#navMenu ul li {
+	float: left;
+}
+
+#navMenu ul li a {
+	text-decoration: none;
+}
+
+#navMenu ul li span {
+	display: block;
+	cursor: pointer;
+	color: #FFF;
+	height: 50px;
+	_width: 100px;
+	padding: 0px 35px;
+	_padding: 0px 0px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 53px;
+}
+
+#navMenu ul li a:hover span , #navMenu ul li a.active span {
+	background: #262c35;
+}
+
+/* =4 dropMenu �C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C*/
+.dropMenu {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    width: 120px;
+    visibility: hidden;
+    filter: progid:DXImageTransform.Microsoft.Shadow(color=#CACACA, direction=135, strength=4);
+    margin-top: 50px;
+    border-top: 0px solid #3CA2DC;
+    background-color: #FFF;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.dropMenu li {
+	margin-top: 2px;
+	margin-bottom: 4px;
+	padding-left: 6px;
+}
+
+.dropMenu a {
+    width: auto;
+    display: block;
+    color: black;
+    padding: 2px 0 2px 1.2em;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+* html .dropMenu a {
+	width: 100%;
+}
+
+.dropMenu a:hover {
+	color: red;
+	text-decoration: underline;
+}

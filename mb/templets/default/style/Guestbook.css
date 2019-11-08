@@ -1,0 +1,227 @@
+/*
+
+[Ä¿Â¼±í] 
+
+	1- messageBoard          ÁôÑÔ°å¿ò¼Ü
+	2- messageBoardLeft      ÁôÑÔÄÚÈÝ×ó±ß¿ò¼Ü
+	3- messageBoardRight     ÁôÑÔÄÚÈÝÓÒ±ß¿ò¼Ü
+	4- messagePage           ÁôÑÔÄÚÈÝ·ÖÒ³
+	5- messageAction         ÁôÑÔ±íµ¥
+	6- rebox                 »Ø¸´¿ò¼Ü
+	
+*/
+
+/* =1 messageBoard¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C-¨C¨C¨C¨C¨C¨C*/
+#messageBoard{/* ÁôÑÔ°å¿ò¼Ü */
+	float:left;
+	width:720px;
+	margin-top:20px;
+	overflow:hidden;
+	clear:both;
+}
+
+/* =2 messageBoardLeft¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C*/
+.messageBoardLeft{/* ÁôÑÔÄÚÈÝ×ó±ß¿ò¼Ü */
+	float:left;
+	width:98px;
+	background:#FFF;
+	border:1px solid #ccc;
+}
+.messageBoardAvatar{/* Í·Ïñ */
+	height:72px;
+	margin:10px auto; 
+	width:72px;
+}
+.messageBoardLeft b{/* êÇ³Æ */
+	display:block;
+	width:98px;
+	font-size:12px;
+	font-weight:normal;
+	text-align:center;
+	line-height:15px;
+	padding-bottom:8px;
+}
+.messageBoardLeft b a{
+	color:#000;
+	font-size:12px;
+	font-weight:normal; 
+	text-decoration:none;
+}
+.messageBoardLeft b a:hover{
+	font-weight:normal; 
+	text-decoration:underline;
+}
+
+/* =3 messageBoardRight¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C*/
+.messageBoardRight{/* ÁôÑÔÄÚÈÝÓÒ±ß¿ò¼Ü */
+	float:left;
+	width:520px;
+}
+.messageBoardRight-top{/* ÁôÑÔÄÚÈÝÓÒ±ß¿ò¼ÜÍ·²¿ */
+	float:left;
+	height:34px;
+	width:620px;
+	_width:585px;
+	color:#828B95;
+	font-size:12px;
+	line-height:34px;
+	padding-left:35px;
+	background:url(../images/messageBoardRight-top.jpg) no-repeat;
+}
+
+.messageBoardRight-center{/* ÁôÑÔÄÚÈÝÓÒ±ß¿ò¼ÜÖÐ²¿ */
+	float:left;
+	width:570px;
+	color:#000;
+	font-size:14px;
+	line-height:23px;
+	padding-left:40px;
+	padding-right:10px;
+	background:url(../images/messageBoardRight-center.jpg) repeat-y;
+}
+.messageBoardRight-center a{
+	color:#888;
+	font-size:14px;
+	text-decoration:none;
+}
+.messageBoardRight-center a:hover{
+	color:#D02F53;
+	font-size:14px;
+	text-decoration:underline;
+}
+
+.messageBoardRight-bottom{/* ÁôÑÔÄÚÈÝ±ß¿ò¼Üµ×²¿ */
+	float:left;
+	height:16px;
+	width:620px;
+	background:url(../images/messageBoardRight-bottom.jpg) no-repeat;
+}
+
+
+/* =4 messagePage¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C-¨C¨C¨C¨C¨C¨C*/
+#messagePage{/* ÁôÑÔÄÚÈÝ·ÖÒ³ */
+  float:right;
+  height:40px;
+	width:600px;
+	color:#222;
+	font-size:13px;
+	line-height:35px;
+	text-align:center;
+	margin:20px auto;
+	border-bottom:1px dashed #888;
+}
+#messagePage a{
+	color:#222;
+	padding:3px;
+	text-decoration:none;
+}
+#messagePage a:hover{
+	background-color:#444;
+	color:#fff;
+	text-decoration:underline;
+}
+
+/* =5 messageAction¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C*/
+#messageAction{/* ÁôÑÔ±íµ¥ */
+	float:right;
+	width:595px;
+	padding-bottom:20px;
+	margin-bottom:10px;
+	border:1px solid #CCCCCC;
+	background:url(../images/messageAction-bg.jpg) repeat;
+}
+#messageActionOther{/* ÁôÑÔ±íµ¥-¹ÜÀíÔ±»Ø¸´ºÍÓÎ¿Í»Ø¸´×¨ÓÃ */
+	float:left;
+	width:595px;
+	padding-bottom:20px;
+	margin-bottom:10px;
+	border:1px solid #CCCCCC;
+	background:url(../images/messageAction-bg.jpg) repeat;
+}
+.messageMsg{/* ±íµ¥ÄÚ²¿¿ò¼Ü */
+	margin:15px auto;
+	width:560px;
+	height:125px;
+}
+.messageUserinfo{/* ÁôÑÔÕßÐÅÏ¢ */
+	margin:auto;
+	width:560px;
+	color:#555;
+	font-size:14px;
+	line-height:35px;
+	padding-bottom:5px;
+}
+.messageUserinfoInput{/* ÁôÑÔÕßÐÅÏ¢-ÊäÈë¿ò */
+  height:14px;
+  width:220px;
+	color:#222;
+	font-size:14px;
+	line-height:15px;
+	font-family:Î¢ÈíÑÅºÚ;
+	padding:6px 3px;
+	background:#FFF;
+	border:1px solid #D6D3D3;
+	vertical-align:middle;
+}
+.messageUserinfo img{/* ÁôÑÔÑéÖ¤Âë */
+	padding:10px 0px 10px 0px;
+	vertical-align:middle;
+}
+.messageSelectAvatar{/* Ñ¡ÔñÍ·Ïñ */
+	width:560px;
+	height:25px;
+	margin:15px auto;
+}
+.messageSelectAvatar ul{
+	float:left;
+}
+.messageSelectAvatar ul li{
+	float:left;
+}
+.messageSelectAvatar ul li input,.messageSelectAvatar ul li img{
+	margin-right:3px;
+	vertical-align:middle;
+}  
+.messageText{/* ÊäÈëÄÚÈÝ¿ò¼Ü */
+	margin:15px auto;
+	width:560px;
+}
+.messageArea{/* ÊäÈëÄÚÈÝÎÄ±¾¿ò */
+	height:150px;
+	width:538px;
+	color:#333;
+	font-size:14px;
+	font-family:Î¢ÈíÑÅºÚ;
+	line-height:22px;
+	padding:10px;
+	background:#FFFFFF;
+	border:#CCCCCC 1px solid;
+}
+.messagePost{/* Ìá½»ÁôÑÔ¿ò¼Ü */
+	margin:auto;
+	width:560px;
+}
+.messagePostBtn{/* Ìá½»°´Å¥ */
+	float:right;
+	cursor:pointer;
+	color:#fff;
+	font-size:14px;
+	text-align:center;
+	vertical-align:middle;
+	font-family:Î¢ÈíÑÅºÚ;
+	margin-left:20px;
+	padding:3px 20px;
+	border:none;
+	background:#4F4E4C;
+}
+
+/* =6 rebox{¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C¨C*/
+.rebox{/* ÁôÑÔ»Ø¸´ÑùÊ½ */
+   margin:12px auto;
+   padding:5px 10px;
+   width:88%;
+   color:#333;
+   font-style:italic;
+   border:1px dashed #ccc;
+   background:#FAFAFA;
+}

@@ -1,0 +1,434 @@
+*{width: 100%;}
+/*
+
+[Ŀ¼��] 
+
+	1- container          �м�����,��main��siderba���ݾ���
+	2- main               main������Ҫ�����б�ҳ������ҳ����
+	3- listBox            ��־�б����,������־���⡢���ڡ�ͼƬ��ժҪ��
+	4- oldArticle         ��ҳ��һҳ����
+	5- pages              �б�ҳ��־��ҳ
+	6- content            ��������ҳ���ݡ�����
+	7- otherBox     	    ����ҳ�������(��־��������־��Ϣ�������־)
+	8- aboutmeContent     �����ҵ���Ϣ
+	8- place              ��ǰ���λ����ʾ
+	
+*/
+
+
+/* =1 container�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C-�C�C�C�C�C�C*/
+#container{/* �м���ܾ��� */
+  margin:0 auto;
+  height:100%;
+  width:1170px;
+}
+
+/* =2 main�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C*/
+#main{/* �м�����������б����������ݵȾ�����ʾ */
+	float:left;
+	margin-top:20px;
+	width:780px;
+	overflow: hidden;
+}
+
+/* =3 listBox�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C*/
+#listBox{/* ��־�б���� */
+	float:left;
+	width:750px;
+	margin-bottom:20px;
+	border:1px solid #CCC;
+	background:#fff;
+	clear:both;
+	overflow:hidden;
+}
+
+.listBoxTop{/* ��־�б�ͷ�� */
+	width:750px;
+	height:105px;
+}
+.listBoxComment{/* ��־�б�ͷ��-���� */
+	float:left;
+	height:70px;
+	width:95px;
+	margin-left:18px;
+	_margin-left:9px;
+	margin-top:17px;
+	background:url(../images/comments.jpg) no-repeat;
+}
+span.countComments{
+	display:block;
+	height:32px;
+	width:55px;
+	color:#6F770A;
+	font-weight:bold;
+	font-size:31px;
+	text-align:center;
+	line-height:40px;
+	margin-top:10px;
+	margin-left:13px;
+	overflow:hidden;
+}
+span.txtComments{
+	display:block;
+	height:15px;
+	width:68px;
+	color:#6F770A;
+	font-size:12px;
+	text-align:center;
+	margin-top:2px;
+	margin-left:7px;
+}
+.listBoxTitle{/* ��־�б�ͷ��-����(Ҳ����������ҳ����) */
+	float:left;
+	height:105px;
+	width:632px;
+}
+.listBoxTitle h2{
+	display:block;
+	height:30px;
+	width:580px;
+	font-size:16px;
+	margin-top:27px;
+	margin-left:10px;
+	overflow:hidden;
+}
+.listBoxTitle h2 a{
+	font-size:24px;
+	color:#333;
+	font-weight:bold;
+	text-decoration: none;
+}
+.listBoxTitle h2 a:hover{
+	color:#D02F53;
+	text-decoration:underline;
+}
+span.timeAuthor{/* ��־�б�ͷ��-����-���·������ں����� */
+	display:block;
+	height:15px;
+	width:580px;
+	color:#9D9D9D;
+	margin-top:15px;
+	margin-left:10px;
+}
+span.timeAuthor small{
+	color:#690;
+}
+
+span.timeAuthor small a{
+	color:#669900;
+	text-decoration:none;
+}
+
+span.timeAuthor small a:hover{
+	color:#D02F53;
+	text-decoration:underline;
+}
+
+.listBoxCenter{/* ��־�б��в� */
+	margin:auto;
+	width:500px;
+	overflow:hidden;
+        text-align: center;
+}
+.listBoxCenter img{/* ��־�б��в�-Ԥ��ͼ */
+	margin-bottom:20px;
+	max-width: 100%;
+}
+p.articleIntro{/* ��־�б��в�-��־ժҪ */
+	display:block;
+	color:#222;
+	font-size:14px;
+	line-height:25px;
+	margin:0px auto 20px auto;
+	overflow:hidden;
+	text-align: left;
+}
+p.readMore{/* ��־�б��в�-�Ķ�ȫ�� */
+	display:block;
+	_color:#D02F53;
+	font-weight:bold;
+	margin:0px auto 20px auto;
+	overflow:hidden;
+}
+p.readMore a{
+	color:#D02F53;
+	_color:#D02F53;
+	text-decoration:none;
+}
+p.readMore a:hover{
+	color:#000;
+	text-decoration:underline;
+}
+
+.listBoxBottom{/* ��־�б��ײ� */
+	margin:auto;
+	width:700px;
+	height:45px;
+	line-height:45px;
+	color:#666;
+	border-top:1px dashed #CCC;
+	overflow:hidden;
+}
+.listBoxBottom a:hover{
+	color:#D02F53;
+	text-decoration:underline;
+}
+small.listBoxBottomTag{/* ��־�б��ײ�-��ǩ�ͷ��� */
+	float:left;
+}
+small.listBoxBottomTag a{
+	margin-right:10px;
+	color:#669900;
+	text-decoration:none;
+}
+small.listBoxBottomClick{/* ��־�б��ײ�-Χ��Ⱥ�� */
+	float:right;
+}
+small.listBoxBottomClick a{
+	margin-right:25px;
+	color:#669900;
+	text-decoration:none;
+}
+
+/* =4 oldArticle�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C-�C�C�C�C�C�C*/
+.oldArticle{/* ��һҳ����(���ӵ���־��Ŀ��֯����ҳ��ҳЧ�����ã��������������취) */
+	color:#fff;
+  float:left;
+  width:90px;
+	height:35px;
+  margin:20px 0px;
+	line-height:35px;
+	text-align:center;
+	background:#333;
+}
+.oldArticle a{
+	color:#fff;
+	text-decoration:none;
+}
+.oldArticle a:hover{
+	font-weight:bold;
+	text-decoration:none;
+}
+
+/* =5 pages�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C-�C�C�C�C�C�C*/
+.pages{/* ��־�б���ҳ */
+  float:left;
+  height:23px;
+  width:700px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+.pages ul{
+	float:left;
+}
+.pages ul li{
+	float:left;
+	line-height:17px;
+	margin-right:8px;
+}
+.pages ul li a{
+	display:block;
+	float:left;
+	color:#fff;
+	padding:2px 12px;
+	text-align:center;
+	text-decoration:none;
+	background:#666;
+
+}
+.pages ul li a:hover{
+	_color:#fff;
+	padding:2px 12px;
+	background-color:#333;
+	text-decoration:underline;
+}
+.pages ul li.thisclass,.pages ul li.thisclass a,.pagebox ul li.thisclass a:hover{
+	color:#fff;
+	background-color:#333;
+	padding:2px 12px;
+}
+
+/* =6 content�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C-�C�C�C�C�C�C*/
+.content{/* ��������ҳ��־���� */
+	margin: auto;
+	color:#111;
+	font-size:14px;
+	line-height:25px;
+	overflow:hidden;
+	width:700px;
+}
+.content p{
+	padding:8px 0px;
+}
+.content a{
+	color:#D02F53;
+	text-decoration:none;
+}
+.content a:hover{
+	text-decoration:underline;
+}
+.content img{
+	max-width: 100%;
+}
+
+.digg{/* ��������ҳ-���� */
+	float:right;
+}
+.diggGood , .diggBad{
+	color:#666;
+	cursor:pointer;
+	float:right;
+}
+
+/* ��������ҳ-���� */
+.down-box {
+    font-size: 16px;
+    padding: .2em 1em;
+    background: #DDF3FE;
+    border: 1px #AEC5CD solid;
+    box-shadow: 0 0 .5em rgba(160,223,255,.8),0 0 .3em white inset;
+    overflow: auto;
+    min-height: 105px;
+}
+.down-box>h1 {
+    text-shadow: 1px 1px 5px rgba(102,204,204,0.86);
+    color: rgb(102,153,255);
+    font-weight: bold;
+    text-align: center;
+    font-size: 22px;
+    border-bottom: 1px dashed #8EC2D7;
+    margin: 0.2em -0.5em;
+    margin-bottom: .4em;
+    line-height: 1.3em;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 0;
+    margin-right: 0;
+}
+.down-box>.file-info {
+    display: inline-block;
+    vertical-align: top;
+}
+.down-box>.file-info>p >span {
+    text-shadow: 1px 1px 5px rgba(253,147,160,0.86);
+    color: rgb(255,51,0);
+    font-size: 15px;
+}
+.down-box>.dlLinks {
+    float: right;
+    text-align: right;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding: 0 1em;
+    border-left: 1px dashed #8EC2D7;
+}
+.dlLinks a {
+    padding-left: 18px;
+    font-weight: bold;
+    color:#ff0000;
+    text-decoration:none;
+}
+.dlLinks a:hover {
+    padding-left: 18px;
+    font-weight: bold;
+    color:#0098DF;
+}
+/* ��������ҳ-��ҳ */
+.dede_pages_all{ width:700px; overflow:hidden; padding:20px;}
+.dede_pages{float:left;}
+.dede_pages span{float:left; width:90px; font-size:16px; font-weight:bold; padding-top:2px;color:#0098DF; margin-bottom:5px;}
+.dede_pages ul{float:left;}
+.dede_pages ul li{float:left; margin-right:5px; margin-bottom:5px;}
+.dede_pages ul li a{display:block; padding:4px 8px; border:1px #b7b7b7 solid; color:#000; cursor:pointer; font-size:14px; font-family:Arial, Helvetica, sans-serif;text-decoration:none;}
+.dede_pages ul li a:hover,.dede_pages ul li.thisclass a{background-color:#0098DF; color:#fff; border:1px #0098DF solid;text-decoration:none;}
+
+.context{
+    padding: 20px;
+    line-height: 25px;
+    font-size: 14px;
+    background-color: #F3F3F3;
+}
+.context a{color:#000;text-decoration:none;}
+.context a:hover{COLOR: #ff7f24;  text-decoration: underline;}
+/* =7 otherBox�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C-�C�C�C�C�C*/
+#otherBox{/* ����ҳ�������(�������־��) */
+	border:1px solid #CCC;
+	background:#fff;
+	float:left;
+	margin-bottom:20px;
+	width:750px;
+	clear:both;
+	overflow:hidden;
+}
+#otherBox h3{/* ��ܱ��� */
+	color:#669900;
+	float:left;
+	font-size:14px;
+	font-weight:bold;
+	padding:25px 0px 0px 25px;
+}
+.relateArticle{/* �����־�б� */
+	float:left;
+	width:700px;
+	padding:20px 0px 20px 20px;
+}
+.relateArticle li{
+    float: left;
+    width: 25%;
+    line-height: 20px;
+    list-style: none;
+    overflow: hidden;
+    text-align: center;
+}
+.relateArticle li a{
+	color:#333;
+	text-decoration:none;
+}
+.relateArticle li a:hover{
+	text-decoration:underline;
+	color:#D02F53;
+}
+.relateArticle li img {
+    width: 160px;
+    height: 200px;
+}
+.ico2 li{
+	background:url(../images/sidebarli.gif) 9px 9px no-repeat;
+	margin-left:8px;
+	padding:0px 30px;
+}
+
+/* =8 aboutmeContent�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C-�C�C�C�C�C�C*/
+.aboutmeContent{/* �����ҵ���Ϣ(list_about.htmר��) */
+	float:left;
+	font-size:14px;
+	color:#222;
+	line-height:23px;
+	margin:0px 0px;
+	padding:40px 40px;
+	overflow:hidden;
+}
+
+/* =9 place�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C-�C�C�C�C�C�C*/
+#place{/* ��ǰλ����ʾ */
+	width:670px;
+}
+#place a{
+	color:#333;
+	text-decoration:none;
+}
+#place a:hover{
+	color:#D02F53;
+	text-decoration:underline;
+}
+
+/* =10 linkbox�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C�C-�C�C�C�C�C�C*/
+#linkbox{
+    margin: 0 auto;
+    width: 1170px;
+    border: 1px solid #CCC;
+    background: #fff;}
+.linkboxTop{float: left;width: 100%}
+.linkboxContent{float: left;width: 100%}

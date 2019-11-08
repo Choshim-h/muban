@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+	<meta name="description" content="{dede:global.cfg_description/}" />
+	<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+	<meta name="robots" content="all" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+	<title>{dede:global.cfg_webname/}</title>
+	<link rel="stylesheet" href="/images/css/index_m.css">
+	<script language="javascript" type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/biaoqianyun.js"></script>
+	<script language="javascript" type="text/javascript" src="{dede:glbal.cfg_templets_skin/}/js/index-pc.js"></script>
+	<script src="/images/js/jquery-2.1.4.min.js"></script>
+</head>
+
+<body>
+	{dede:include filename="header.htm"/}
+<!-- /header -->
+	<div id="searchBox">
+		<form action="{dede:global.cfg_cmsurl/}/plus/search.php" class="form" name="formsearch" style="width: 100%;display:flex;">         
+		<input name="keyword" type="text" class="searchInput" id="search-keyword" value="SEARCH THE SITE" onFocus="if(this.value=='SEARCH THE SITE'){this.value='';}"  onblur="if(this.value==''){this.value='SEARCH THE SITE';}"/>         	  	
+		<input name="submit" type="image" class="searchSubmit" src="{dede:global.cfg_templets_skin/}/images/search_btn.jpg" alt="" />	
+	  </form>
+   </div>
+   <!-- searchBox -->
+	<div id="container">
+		<div id="main">
+			{dede:arclist row=8 titlelen='60'}
+			<div id="listBox">
+				<div class="listBoxTop">
+					<div class="listBoxComment">
+						<span class="countComments">[field:pubdate function="MyDate('d',@me)"/]</span>
+						<span class="txtComments">[field:pubdate function="MyDate('m',@me)"/]</span>
+					</div>
+					<div class="listBoxTitle">
+						<h2><a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a></h2>
+						<span class="timeAuthor"><small>[field:click/]</small></span>
+					</div>
+				</div>
+				<div class="listBoxCenter">
+					<a href='[field:arcurl/]'><img src='[field:id function='GetFirstImg(@me)'/]'/></a>
+					<p class="readMore"><a href="[field:arcurl/]"></a></p>
+				</div>
+				<div class="listBoxBottom">
+					<small class="listBoxBottomTag">[field:id function=GetTags(@me)/]</small>
+					</small>
+					<small class="listBoxBottomClick"><a target="_blank"
+							href='[field:typeurl/]'>[field:typename/]</a></small>
+				</div>
+			</div>
+			{/dede:arclist}
+			<div class="oldArticle">
+				<a href="/meinv/">Next Page</a>
+			</div><!-- /���ӵ�����־����Ŀ�ڶ�ҳ -->
+
+		</div>
+		<!-- //�����Ҳ����� -->
+		<!-- {dede:include filename="sidebar.htm"/} -->
+	</div>
+	<div id="linkbox">
+		<div class="linkboxTop">
+			<h2></h2>
+		</div>
+		<div class="linkboxContent">
+			<ul class="linksTxt">
+				{dede:flink type='text' row='6'/}
+			</ul>
+		</div>
+	</div>
+	{dede:include filename="footer.htm"/}
+	<!-- /footer -->
+
+	<script>
+		$(function () {
+			$('aside.slide-wrapper').on('touchstart', 'li', function (e) {
+				$(this).addClass('current').siblings('li').removeClass('current');
+			});
+
+			$('a.slide-menu').on('click', function (e) {
+				var wh = $('div.wrapperhove' + 'rtree').height();
+				$('div.slide-mask').css({height: '100%', width: '100%'}).show();
+				$('aside.slide-wrapper').css({height: '100%', width: '70%', display: 'block'}).addClass('moved');
+				$('.wrapperhovertree').css({height:'100%'});
+				$('#navMenu').css({height:'100%', width: '100%', display:'block'});
+			});
+
+			$('div.slide-mask').on('click', function () {
+				$('div.slide-mask').hide();
+				$('aside.slide-wrapper').removeClass('moved');
+				$('.wrapperhovertree').css({height:'auto'});
+				$('#navMenu').css({height:'0', display:'none'});
+			});
+		});
+	</script>
+</body>
+
+</html>
+
+</html>

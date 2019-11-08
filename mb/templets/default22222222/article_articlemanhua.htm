@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{dede:field.title/}_{dede:field.typename/}_{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/css.css" rel="stylesheet" media="screen" type="text/css" />
+</head>
+<body class="pbody">
+{dede:include filename="header.htm"/}
+<div class="page_box w1180 center">
+  <!--当前位置-->
+  <div class="position box_shadow t15">
+    <strong>{dede:field.typename/}</strong>
+    <span>
+      {dede:tag row='10'  sort='' getall='0'}
+      <a href='[field:link/]' class='openloading'>[field:tag /]</a>
+      {/dede:tag}
+    </span>
+    <small>当前位置: {dede:field.position/}</small>
+  </div>
+  <!--当前位置-->
+  
+  <!--漫画内容-->
+  <div class="abox w1120 box_shadow t15">
+    <div class="content_link">
+      <!--左侧-->
+      <div class="content_left">
+        <!--标题-->
+        <div class="content_title">
+          <div class="date_box box_radius box_shadow">
+            <strong>{dede:field.pubdate function="strftime('%d',@me)"/}</strong>
+            <span>{dede:field.pubdate function="strftime('%b',@me)"/}</span>
+          </div>
+          <h1>{dede:field.title/}</h1>
+          <small>分类：{dede:field.typename/} | 被撸过<script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script>次</small>
+        </div>
+        <!--标题-->
+        <!--图片-->
+        <div class="content_pic t30">
+        <a href='javascript:dPlayPre();' class="btn_prev openloading" title="上一页"></a>
+        <div class="ico_prev"></div>
+        <a href='javascript:dPlayNext();' class="btn_next openloading" title="下一页"></a>
+        <div class="ico_next"></div>
+        {dede:field.body/}</div>
+        <!--图片-->
+        <!--好评 -->
+        <div class="digg">
+          <ul  id="newdigg">
+          <a onclick="javascript:postDigg('good',{dede:field.id/})" class="good box_radius box_shadow"><strong>我撸！</strong><span>{dede:field.goodpost/}</span></a>
+          <a onclick="javascript:postDigg('bad',{dede:field.id/})" class="bad box_radius box_shadow"><strong>滚粗！</strong><span>{dede:field.badpost/}</span></a>
+          </ul>
+        </div>
+		<!--好评 -->
+        <!--分页-->
+        <div class="page"> {dede:pagebreak/}</div>
+        <!--分页-->
+        <!--百度推荐-->
+        <div class="w100 pleft t30" id="hm_t_10823"></div>
+        <!--百度推荐-->
+        <!-- UY BEGIN -->
+        <div id="uyan_frame" class="w100 pleft t30"></div>
+        <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1501624"></script>
+        <!-- UY END -->
+      </div>
+      <!--左侧-->
+      <!--右侧-->
+      <div class="content_right w250">
+        <dl>
+        <div class="abox_dt"><strong class="ico_01">撸得最多</strong></div>
+        <dd>
+          <div class="right_pic">
+              {dede:arclist typeid='1,2,3,4,5' orderby='click' orderway='asc' flag='' limit='0,1'}
+              <a href="[field:arcurl/]"  title="[field:fulltitle/]" target='_blank' class="imgC"><img src="[field:litpic/]" alt="[field:fulltitle/]"/></a>
+              {/dede:arclist}
+          </div>
+          <div class="right_list t15">
+              {dede:arclist typeid='1,2,3,4,5' orderby='click' orderway='asc' flag='' limit='1,4'}
+              <a href="[field:arcurl/]"  title="[field:fulltitle/]" target='_blank' class="icon" ><strong>[field:fulltitle/]</strong><span>[field:click/]</span></a>
+              {/dede:arclist}
+          </div>
+        </dd>
+        </dl>
+        <dl>
+        <div class="abox_dt t30"><strong class="ico_01">撸主好评</strong>
+        </div>
+        <dd>
+          <div class="right_pic">
+              {dede:arclist typeid='1,2,3,4,5' orderby='rand' flag='' limit='0,1'}
+              <a href="[field:arcurl/]"  title="[field:fulltitle/]" target='_blank' class="imgC"><img src="[field:litpic/]" alt="[field:fulltitle/]"/></a>
+              {/dede:arclist}
+          </div>
+          <div class="right_list t15">
+              {dede:arclist typeid='1,2,3,4,5' orderby='rand' flag='' limit='1,4'}
+              <a href="[field:arcurl/]"  title="[field:fulltitle/]" target='_blank' class="icon" ><strong>[field:fulltitle/]</strong><span>[field:click/]</span></a>
+              {/dede:arclist}
+          </div>
+        </dd>
+        </dl>
+        
+        <div class="scroll_box t30">
+          <dl class="content_right_scroll"><!-- 广告位：邪恶小漫画_内页跟随--></dl>
+        </div>
+      </div>
+      <!--右侧-->
+      
+    </div>
+  </div>
+  <!--漫画内容-->
+</div>
+{dede:include filename="footer.htm"/}
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+<script type="text/javascript">
+//顶踩
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("{dede:field name='phpurl'/}/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+	DedeXHTTP = null;
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alertbox('撸主们请自重','你都撸过了还来，我弹你哟！！','300px'); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "{dede:global.cfg_phpurl/}/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+	DedeXHTTP = null;
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("{dede:global.cfg_phpurl/}/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+
+//图片分页
+var shortname = "{dede:global.art_shortname/}";
+var npage = {dede:field name='nowpage'/};
+var totalpage = {dede:field name='totalpage'/};
+var namehand = '{dede:field name='namehand'/}';
+var displaytype = '{dede:field name='displaytype'/}';
+
+//获取上下集链接
+function GetNextUrl() {
+  var nexthtml = "{dede:prenext get='next'/}";
+  var NextUrl = nexthtml.split("href='")[1].split("'>")[0];
+  return (NextUrl);
+}
+function GetPreUrl() {
+  var prehtml = "{dede:prenext get='pre'/}";
+  var PreUrl = prehtml.split("href='")[1].split("'>")[0];
+  return (PreUrl);
+}
+
+//上一张
+function dPlayPre(){
+
+if(npage<2)
+{
+	var ptext = "{dede:prenext get='pre'/}";
+	if(ptext == '上一篇：没有了 ')
+	{
+	alertbox('撸主请自重','这是起点！请你往后撸！','300px');
+	}
+	else
+	{
+		location.href = GetPreUrl();
+	}
+}
+else
+{
+		if(npage==2) {
+			if(namehand!='') location.href = namehand+shortname;
+			//else location.href = "view.php?aid={dede:field name='id'/}";
+			else location.href = "{dede:global.cfg_basehost/}{dede:field.typedir/}/view-{dede:field name='id'/}.html";
+		} else if(displaytype=='st' && namehand!='') {
+			location.href = namehand+"_"+(npage-1)+shortname;
+		} else {
+			//location.href = "view.php?aid={dede:field name='id'/}&pageno="+(npage-1);
+			location.href = "{dede:global.cfg_basehost/}{dede:field.typedir/}/view-{dede:field name='id'/}-"+(npage-1)+".html";
+		}
+	}
+};
+
+//下一张
+function dPlayNext()
+{
+	if(npage==totalpage) {
+		var ptext = "{dede:prenext get='next'/}";
+		if(ptext == '下一篇：没有了 ')
+		{
+		alertbox('恭喜你撸主','你已经撸到了本栏目的尽头，辛苦了~试试往前撸回去吧！','300px'); 
+		}
+		else
+		{
+			location.href = GetNextUrl();
+		}
+		 
+		  
+	}
+	else
+	{
+		if(displaytype=='st' && namehand!='') location.href = namehand+"_"+(npage+1)+shortname;
+		//else location.href = "view.php?aid={dede:field name='id'/}&pageno="+(npage+1);
+		else location.href = "{dede:global.cfg_basehost/}{dede:field.typedir/}/view-{dede:field name='id'/}-"+(npage+1)+".html";
+	}
+};
+
+
+$(document).ready(function() {
+	//按钮跟随
+    $(window).scroll(function(){
+		$('.ico_prev,.ico_next').Jscroll(150);
+		$('.content_right_scroll').Jscroll(30);
+	});
+	$('.btn_prev,.btn_next').hover(function(){
+		$(this).next('div').addClass('act')},function(){$(this).next('div').removeClass('act')});
+	//居中
+	$('.page').Jcenter();
+	$('.digg').Jcenter();
+});
+</script>
+</body>
+</html>
